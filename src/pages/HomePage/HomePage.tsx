@@ -1,5 +1,5 @@
 import "./HomePage.css";
-import { useState, useEffect, SetStateAction, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import PreviewCard from "../../components/PreviewCard/PreviewCard";
 import logo from "../../assets/pokemon.png";
