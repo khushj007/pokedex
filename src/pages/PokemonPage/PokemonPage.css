@@ -1,0 +1,129 @@
+.modal-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(1em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/background.jpeg");
+  background-size: cover;
+}
+
+.modal-content {
+  padding: 1em;
+  min-height: 600px;
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-modal {
+  border-right: 1px solid gray;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.left-modal > img {
+  margin-top: 2em;
+  width: 80%;
+}
+
+.right-modal {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  padding: 1em;
+  gap: 1em;
+}
+.param {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.right-modal > p {
+  width: 90%;
+}
+.modal-buttons {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.modal-buttons > button {
+  width: 80px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.modal-buttons > button:nth-child(1) {
+  color: white;
+  border: none;
+  background-color: #0075be;
+}
+.modal-buttons > button:nth-child(2) {
+  color: white;
+  border: none;
+  background-color: #ffcc00;
+}
+
+.parameters {
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+}
+
+/* meadia query */
+
+@media (max-width: 905px) {
+  .left-modal {
+    width: 100%;
+    height: 50%;
+    border-right: none;
+    border-bottom: 1px solid gray;
+  }
+
+  .left-modal > img {
+    margin-top: 0em;
+    width: 30%;
+  }
+
+  .right-modal {
+    width: 100%;
+    height: 50%;
+  }
+  .parameters {
+    margin-top: 0em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    gap: 1em;
+  }
+}
+@media (max-width: 500px) {
+  .parameters {
+    margin-top: 0em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    gap: 0.2em;
+  }
+}

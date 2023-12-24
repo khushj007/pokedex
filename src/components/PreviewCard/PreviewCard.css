@@ -1,0 +1,48 @@
+.preview-card {
+  position: relative;
+  border: 1px solid blue;
+  margin-top: 4em;
+
+  min-width: 250px;
+  height: 150px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2em);
+}
+
+.preview-card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.preview-card > img {
+  position: relative;
+  width: 100%;
+  height: 8em;
+  bottom: 4em;
+}
+
+.preview-content {
+  margin-top: 10px;
+  position: relative;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 4em;
+  gap: 1em;
+}
+
+.preview-content > h2 {
+  font-size: 1em;
+  font-family: "Press Start 2P", sans-serif;
+}
+.preview-content > h3 {
+  font-size: 1em;
+  font-family: "Press Start 2P", sans-serif;
+}
