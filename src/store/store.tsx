@@ -8,7 +8,7 @@ const StoreProvider: FC<{ children: ReactNode }> = ({ children }) => {
   function storeData(value: any) {
     const newData = [...myData, value];
     setMydata([...newData]);
-    console.log(`newData`, newData);
+
     localStorage.setItem("pokemon", JSON.stringify(newData));
   }
   function getData() {
@@ -22,10 +22,8 @@ const StoreProvider: FC<{ children: ReactNode }> = ({ children }) => {
   function deleteData(value: string) {
     const data = getData();
 
-    console.log(`data before delete`, data, value);
     const newData = data.filter((val) => val.name !== value);
 
-    console.log("data after deletion", newData);
     localStorage.setItem("pokemon", JSON.stringify(newData));
   }
 
