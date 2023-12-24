@@ -1,0 +1,19 @@
+.mypokemon-container {
+  display: flex;
+  justify-content: space-around;
+  background-image: url("../../assets/background.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1em;
+  min-height: 100vh;
+}
+
+.notice {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 3em;
+  font-family: "Press Start 2P", sans-serif;
+}

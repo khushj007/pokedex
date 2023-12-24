@@ -58,4 +58,16 @@ select {
   height: 2em;
   border: none;
   width: 80px;
+  border-radius: 10px;
+}
+
+.my-pokemons {
+  padding: 0.5em;
+  height: 2em;
+  border: none;
+  background-color: orangered;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
 }

@@ -6,6 +6,7 @@ import logo from "../../assets/pokemon.png";
 import ball from "../../assets/pokeball.png";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [cards, setCards] = useState<Array<any>>([]);
@@ -13,6 +14,7 @@ const HomePage = () => {
   const [isError, setError] = useState<string>("");
   const [type, setType] = useState("All");
   let types = useRef({ array: ["all"] });
+  const navigate = useNavigate();
 
   const myDebounce = debounce(searchResult, 700);
 
@@ -72,18 +74,15 @@ const HomePage = () => {
 
       if (uniqueTypes.length > 1) {
         types.current = { array: uniqueTypes };
-        console.log("ttypes", types.current);
       }
 
       toast.dismiss();
     } catch (error: any) {
-      console.error("fetching error", error.message);
       setError(error.message);
       toast.error(`${error.message}`);
     }
   }
 
-  console.log(cards);
   async function handelFilter(e: React.ChangeEvent<HTMLInputElement>) {
     getData(true, e.target.value.toLocaleLowerCase());
   }
@@ -157,6 +156,14 @@ const HomePage = () => {
               );
             })}
           </select>
+          <button
+            className="my-pokemons"
+            onClick={() => {
+              navigate("/mypokemons");
+            }}
+          >
+            My Pokemons
+          </button>
         </nav>
         <div className="cards-container">
           {cards.map((card: any) => {

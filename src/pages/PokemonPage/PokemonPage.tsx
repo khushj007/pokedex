@@ -6,6 +6,9 @@ import axios from "axios";
 import Loader from "../../components/Loader/Loader";
 import StatusBar from "../../components/StatusBar/StatusBar";
 import choice from "../../assets/select1.wav";
+import saved from "../../assets/save.wav";
+import { useStore } from "../../store/store";
+import { toast } from "react-toastify";
 
 const pokemonColors = [
   "#FF4500",
@@ -17,6 +20,7 @@ const pokemonColors = [
 ];
 
 const PokemonModal = () => {
+  const { storeData }: any = useStore();
   const { id } = useParams();
   const [isLoading, setLoading] = useState(true);
   const [pokemon, setPokemon] = useState({
@@ -31,6 +35,7 @@ const PokemonModal = () => {
   });
   const navigate = useNavigate();
   const choose = useRef(new Audio(choice));
+  const save = useRef(new Audio(saved));
 
   async function fetchData() {
     try {
@@ -61,7 +66,12 @@ const PokemonModal = () => {
     }
   }
 
-  console.log(pokemon);
+  function savingData() {
+    storeData(pokemon);
+    save.current.play();
+    toast.info(`${pokemon.name} added to your list`);
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -75,7 +85,7 @@ const PokemonModal = () => {
           <div className="left-modal">
             <img src={pokemon.url} alt="pokemon" />
             <div className="modal-buttons">
-              <button>Save</button>
+              <button onClick={savingData}>Save</button>
               <button
                 onClick={() => {
                   choose.current.play();
