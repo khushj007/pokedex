@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Pokedex - Pokemon Collection Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Welcome to the Pokedex, a Pokemon Collection Web Application! This platform provides information about various Pokemon species and allows users to build and manage their own Pokemon collections.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+The web application is built using the following technologies:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend:**
 
-- Configure the top-level `parserOptions` property like this:
+  - React
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- **State Management:**
+  - Context API
+
+## Access the Web App
+
+To explore and utilize the features of the web app, visit [Pokedex Web App](https://pokedex-khushj007.vercel.app/).
+
+## Development Environment
+
+Ensure all dependencies are installed and configured by running the following commands:
+
+```bash
+# Install dependencies
+npm install
+
+# Run the frontend application
+npm run dev
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
